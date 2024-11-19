@@ -11,15 +11,15 @@ public class RobotContainer {
   public Joystick joy = new Joystick(0);
   public PneumaticSys m_PneumaticSys = new PneumaticSys();
 
-  public ElevatorCmd elevatorCmd;
+  public SolenoidCmd SolenoidCmd;
 
   public RobotContainer() {
-    elevatorCmd = new ElevatorCmd(m_PneumaticSys, joy);
+    SolenoidCmd = new SolenoidCmd(m_PneumaticSys, joy);
 
     configureBindings();
   }
 
   private void configureBindings() {
-    m_PneumaticSys.setDefaultCommand(elevatorCmd);
+    m_PneumaticSys.setDefaultCommand(SolenoidCmd);
   }
 }

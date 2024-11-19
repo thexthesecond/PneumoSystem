@@ -31,7 +31,7 @@ public class PneumaticSys extends SubsystemBase {
 
     public void ClawClose() {
         ClawStatus = "Fechada";
-        clawSoid.set(true);
+        clawSoid.set(false);
     }
 
     public void Suspend() {

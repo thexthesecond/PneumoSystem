@@ -3,12 +3,12 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 
-public class ElevatorCmd extends Command {
+public class SolenoidCmd extends Command {
     
     public PneumaticSys m_PneumoSys;
     public Joystick joy;
 
-    public ElevatorCmd(PneumaticSys m_PneumoSys, Joystick joy) {
+    public SolenoidCmd(PneumaticSys m_PneumoSys, Joystick joy) {
         this.m_PneumoSys = m_PneumoSys;
         this.joy = joy;
 
