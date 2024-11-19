@@ -14,13 +14,10 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class PneumaticSys extends SubsystemBase {
     
-    public DoubleSolenoid SuspenSoid_R = 
+    public DoubleSolenoid SuspenSoid = 
             new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 0, 1);
 
-    public DoubleSolenoid SuspenSoid_L = 
-            new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 2, 3);
-
-    public Solenoid clawSoid = new Solenoid(PneumaticsModuleType.CTREPCM, 4);
+    public Solenoid clawSoid = new Solenoid(PneumaticsModuleType.CTREPCM, 3);
 
     public Compressor compressor = new Compressor(PneumaticsModuleType.CTREPCM);
 
@@ -45,26 +42,23 @@ public class PneumaticSys extends SubsystemBase {
     }
 
     public void Suspend() {
-        SuspenStatus= () -> "Retraido";
-        SuspenSoid_L.set(Value.kForward);
-        SuspenSoid_R.set(Value.kForward);
+        SuspenStatus= () -> "Acima";
+        SuspenSoid.set(Value.kForward);
     }
 
     public void Descend() {
-        SuspenStatus= () -> "Contraido";
-        SuspenSoid_L.set(Value.kReverse);
-        SuspenSoid_R.set(Value.kReverse);
+        SuspenStatus= () -> "Abaixo";
+        SuspenSoid.set(Value.kReverse);
     }
 
     public void Stop() {
         SuspenStatus= () -> "Desativado";
-        SuspenSoid_L.set(Value.kOff);
-        SuspenSoid_L.set(Value.kOff);
+        SuspenSoid.set(Value.kOff);
     }
 
     @Override
     public void periodic() {
-        SmartDashboard.putString("Status do cilindro", SuspenStatus.get());
+        SmartDashboard.putString("Status da suspensão", SuspenStatus.get());
         SmartDashboard.putString("Status da garra", ClawStatus.get());
     }
 }
