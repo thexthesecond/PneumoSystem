@@ -39,3 +39,4 @@ public class SolenoidCmd extends Command {
         m_PneumoSys.Stop();
     }
 }
+
