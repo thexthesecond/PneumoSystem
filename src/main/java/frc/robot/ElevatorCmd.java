@@ -17,7 +17,7 @@ public class ElevatorCmd extends Command {
 
     @Override
     public void execute() {
-        if (joy.getRawButton(4)) {
+        if (joy.getRawButton(2)) {
             m_PneumoSys.Suspend();
         }
 
@@ -29,7 +29,7 @@ public class ElevatorCmd extends Command {
             m_PneumoSys.ClawOpen();
         }
 
-        if (joy.getRawButton(2)) {
+        if (joy.getRawButton(4)) {
             m_PneumoSys.ClawClose();
         }
     }
