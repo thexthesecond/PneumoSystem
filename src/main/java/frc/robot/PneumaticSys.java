@@ -21,12 +21,12 @@ public class PneumaticSys extends SubsystemBase {
         SuspenStatus = "Contraído";
         ClawStatus = "Fechada";
         Descend();
-        ClawClose();
+        ClawOpen();
     }
 
     public void ClawOpen() {
         ClawStatus = "Aberta";
-        clawSoid.set(true);
+        clawSoid.set(false);
     }
 
     public void ClawClose() {
